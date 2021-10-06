@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 
 public class main_2667 {
@@ -42,6 +44,13 @@ public class main_2667 {
 
 		}
 		System.out.println(count);
+		answer.sort(new Comparator<Integer>() {
+			@Override
+			public int compare(Integer o1, Integer o2)
+			{
+				return Integer.compare(o1, o2);
+			}
+		});
 		for(int i : answer)
 		{
 			System.out.println(i);
