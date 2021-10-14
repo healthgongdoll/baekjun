@@ -21,21 +21,21 @@ public class main_2468 {
 		for (int i = 0; i < n; i++) {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < n; j++) {
-				board[i][j] = Integer.parseInt(st.nextToken());
+				board[i][j] = Integer.parseInt(st.nextToken());		//입력값 집어넣음
 			}
 		}
 
-		int limit = 1;
+		int limit = 0;		// 1 ~ 100 
 		int count = 0;
 		int max = 0;
 		for (int i = limit; i <= 100; i++) {
-			visited = new boolean[n][n];
+			visited = new boolean[n][n];		// 매 높이마다 초기화를 해줘야됨 
 			for (int x = 0; x < n; x++) {
 				for (int y = 0; y < n; y++) {
-					if(board[x][y] > i && visited[x][y] == false)
+					if(board[x][y] > i && visited[x][y] == false)		// board[x][y] > i 높이 && 처음방문일경우 : 들어갑니다
 					{
-						count = count +1;
-						dfs(x,y,n,i);
+						count = count +1;		// 섬의 갯수
+						dfs(x,y,n,i);			//dfs 돌기
 					}
 				}
 			}
